@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayout
 import ru.geekbrains.filmapp.R
 import ru.geekbrains.filmapp.adapters.CategoryAdapter
+import ru.geekbrains.filmapp.adapters.OnItemViewClickListener
 import ru.geekbrains.filmapp.databinding.FragmentCategoryBinding
+import ru.geekbrains.filmapp.models.OriginalSourcePreview
 import ru.geekbrains.filmapp.viewmodels.CategoryFragmentViewModel
 
 
@@ -20,7 +22,27 @@ class CategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentCategoryBinding
     private lateinit var categoryViewModel: CategoryFragmentViewModel
-    private lateinit var categoryAdapter: CategoryAdapter
+
+
+    private val categoryAdapter = CategoryAdapter(object : OnItemViewClickListener {
+        override fun onItemClick(movie: OriginalSourcePreview) {
+            val manager = activity?.supportFragmentManager
+            if (manager != null) {
+                val bundle = Bundle()
+                bundle.putParcelable(
+                    MovieDetailsFragment.BUNDLE_EXTRA,
+                    movie
+                )
+                manager.beginTransaction()
+                    .add(
+                        R.id.container,
+                        MovieDetailsFragment.newInstance(bundle)
+                    )
+                    .addToBackStack("")
+                    .commit()
+            }
+        }
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +73,6 @@ class CategoryFragment : Fragment() {
     }
 
     private fun doInitialization() {
-        categoryAdapter = CategoryAdapter()
         binding.rvMoviesList.layoutManager = LinearLayoutManager(context)
         binding.rvMoviesList.adapter = categoryAdapter
         startObserving()
