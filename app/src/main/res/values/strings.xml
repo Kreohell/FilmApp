@@ -15,4 +15,5 @@
     <string name="top_rated">top_rated</string>
     <string name="movie_image">movie_image</string>
     <string name="available_soon">Available soon</string>
+    <string name="about_film">about_film</string>
 </resources>
