@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.geekbrains.filmapp.R
 import ru.geekbrains.filmapp.models.Movie
+import ru.geekbrains.filmapp.utils.Constants.Companion.POSTERS_BASE_URL
 
-class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.MoviesViewHolder>(){
+class CategoryAdapter(private var onItemViewClickListener: OnItemViewClickListener) :
+    RecyclerView.Adapter<CategoryAdapter.MoviesViewHolder>(){
 
     private val moviesList = arrayListOf<Movie>()
 
@@ -17,10 +19,15 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.MoviesViewHolder>()
 
         private val poster: ImageView = itemView.findViewById(R.id.ivPoster)
 
-        fun bindMovie(movie: Movie) = Picasso.get().load(R.drawable.ic_stat_name).into(poster)
+        fun bindMovie(movie: Movie) {
+            Picasso.get().load("$POSTERS_BASE_URL${movie.poster_path}").into(poster)
+            itemView.setOnClickListener {
+                onItemViewClickListener.onItemClick(movie = movie)
+            }
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =  MoviesViewHolder(itemView = LayoutInflater.from(parent.context).inflate(R.layout.movies_list_item, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MoviesViewHolder(itemView = LayoutInflater.from(parent.context).inflate(R.layout.movies_list_item, parent, false))
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) = holder.bindMovie(moviesList[position])
 
