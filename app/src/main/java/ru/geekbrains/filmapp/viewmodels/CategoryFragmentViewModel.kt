@@ -25,10 +25,10 @@ class CategoryFragmentViewModel : ViewModel(), LifecycleObserver {
     fun changeTab(position: Int) {
         if (position == currentPosition && observingMovies.value != null) return
         when (position) {
-            0 -> categoryRepository.getPopularMovies()
-            1 -> categoryRepository.getNowPlayingMovies()
-            2 -> categoryRepository.getUpcomingMovies()
-            3 -> categoryRepository.getTopMovies()
+            0 -> categoryRepository.getPopularMovies(observingMovies)
+            1 -> categoryRepository.getNowPlayingMovies(observingMovies)
+            2 -> categoryRepository.getUpcomingMovies(observingMovies)
+            3 -> categoryRepository.getTopMovies(observingMovies)
         }
         currentPosition = position
     }
