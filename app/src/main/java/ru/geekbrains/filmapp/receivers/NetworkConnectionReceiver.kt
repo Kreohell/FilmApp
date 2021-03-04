@@ -17,8 +17,8 @@ class NetworkConnectionReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         when(checkInternet(context)){
-            true-> flag.value=false
-            false->flag.value=true
+            true-> flag.value = false
+            false-> flag.value = true
         }
     }
 

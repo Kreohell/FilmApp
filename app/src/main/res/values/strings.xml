@@ -18,4 +18,10 @@
     <string name="about_film">about_film</string>
     <string name="unknown">Unknown</string>
     <string name="no_description">No description</string>
+    <string name="change_name">change_name</string>
+    <string name="language">language</string>
+    <string name="choose_language">choose language</string>
+    <string name="adult_content">adult content</string>
+    <string name="about">about</string>
+    <string name="save_settings">save settings</string>
 </resources>
