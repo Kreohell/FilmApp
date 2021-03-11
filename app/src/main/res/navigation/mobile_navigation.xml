@@ -36,8 +36,4 @@
             android:name="moveId"
             app:argType="integer" />
     </fragment>
-    <fragment
-        android:id="@+id/contacts_nav"
-        android:name="ru.geekbrains.filmapp.fragments.ContactsFragment"
-        android:label="ContactsFragment" />
 </navigation>

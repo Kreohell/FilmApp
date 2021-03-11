@@ -19,9 +19,4 @@
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/search" />
 
-    <item
-        android:id="@+id/contacts_nav"
-        android:icon="@drawable/ic_baseline_import_contacts_24"
-        android:title="@string/ontacts"/>
-
 </menu>

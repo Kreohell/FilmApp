@@ -10,9 +10,9 @@
     <string name="movies">Movies</string>
     <string name="names">Names</string>
     <string name="popular">popular</string>
-    <string name="now_playing">now_playing</string>
+    <string name="now_playing">Now playing</string>
     <string name="upcoming">upcoming</string>
-    <string name="top_rated">top_rated</string>
+    <string name="top_rated">Top rated</string>
     <string name="movie_image">movie_image</string>
     <string name="available_soon">Available soon</string>
     <string name="about_film">about_film</string>
@@ -25,4 +25,23 @@
     <string name="about">about</string>
     <string name="save_settings">save settings</string>
     <string name="ontacts">Сontacts</string>
+    <string name="my_movies">My movies</string>
+    <string name="wished">Wished</string>
+    <string name="watched">Watched</string>
+    <string name="apply">Apply</string>
+    <string name="delete">Delete</string>
+
+    <string-array name="Languages">
+        <item>English</item>
+        <item>Russian</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="cast_crew"><![CDATA[Cast & Crew]]></string>
+    <string name="genres">Genres</string>
+    <string name="commentary">Commentary</string>
+    <string name="no_comments">No comments</string>
+    <string name="leave_a_comment">Leave a comment</string>
+    <string name="wish">Wish</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>
