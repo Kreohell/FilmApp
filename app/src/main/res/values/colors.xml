@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#f97475</color>
+    <color name="ripple">#484848</color>
+    <color name="inactive">#676769</color>
+    <color name="lightGray">#9c9c9c</color>
+    <color name="textOnButton">#8f8f91</color>
+    <color name="iconColor">#807f84</color>
+    <color name="listIcon">#6b6a6f</color>
+    <color name="deleteBackground">#ff5756</color>
+    <color name="elementsColor">#2f2e33</color>
+    <color name="actorBirthText">#4a4a4c</color>
 </resources>
