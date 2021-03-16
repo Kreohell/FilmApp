@@ -38,6 +38,7 @@ android {
         viewBinding true
     }
 
+
 }
 
 dependencies {
@@ -94,7 +95,7 @@ dependencies {
     implementation "com.github.skydoves:powerspinner:1.1.7"
 
     // Room
-    def room_version = "2.2.6"
+    def room_version = "2.3.0-beta03"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"

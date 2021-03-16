@@ -2,10 +2,7 @@ package ru.geekbrains.filmapp.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.*
-import ru.geekbrains.filmapp.data.MovieRepository
-import ru.geekbrains.filmapp.data.MoviesDatabase
-import ru.geekbrains.filmapp.data.WantMovie
-import ru.geekbrains.filmapp.data.WatchedMovie
+import ru.geekbrains.filmapp.data.*
 import ru.geekbrains.filmapp.models.SimpleMovie
 
 class HomeFragmentViewModel(application: Application) : AndroidViewModel(application),
@@ -15,6 +12,7 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
 
     var readWantMovies: LiveData<List<WantMovie>>
     var readWatchMovies: LiveData<List<WatchedMovie>>
+    var readFavoriteActors: LiveData<List<FavoriteActor>>
     private val repository: MovieRepository
 
     init {
@@ -22,5 +20,6 @@ class HomeFragmentViewModel(application: Application) : AndroidViewModel(applica
         repository = MovieRepository(movieDao = movieDao)
         readWantMovies = repository.readWantMovies
         readWatchMovies = repository.readWatchedMovies
+        readFavoriteActors = repository.readFavoriteActors
     }
 }
