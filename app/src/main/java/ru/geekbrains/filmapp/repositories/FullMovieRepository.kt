@@ -3,7 +3,6 @@ package ru.geekbrains.filmapp.repositories
 import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Response
-import ru.geekbrains.filmapp.BuildConfig
 import ru.geekbrains.filmapp.api.ApiService
 import ru.geekbrains.filmapp.models.ActorFullInfoModel
 import ru.geekbrains.filmapp.models.MovieFullModel
