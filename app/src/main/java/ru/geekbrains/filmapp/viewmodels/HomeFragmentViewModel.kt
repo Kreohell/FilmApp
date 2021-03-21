@@ -1,34 +1,25 @@
 package ru.geekbrains.filmapp.viewmodels
 
+import android.app.Application
 import androidx.lifecycle.*
+import ru.geekbrains.filmapp.data.*
+import ru.geekbrains.filmapp.models.SimpleMovie
 
-class HomeFragmentViewModel : ViewModel(), LifecycleObserver {
-//
-//    private var moviesRepository = MoviesRepository()
-//    private var _currentPosition = 0
-//
-//    private var _observingTabPosition = MutableLiveData<Int>()
-//    private var _observingMovies = MutableLiveData<MoviesResponse>()
-//
-//    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-//    fun init() = changeTab(_currentPosition)
-//
-//    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-//    fun orientationChanged() {
-//        _observingTabPosition.value = _currentPosition
-//    }
-//
-//    fun getObservedMovies() = _observingMovies
-//    fun getPosition() = _observingTabPosition
-//
-//    fun changeTab(position: Int) {
-//        if (position == _currentPosition && _observingMovies.value != null) return
-//        when (position) {
-//            0 -> moviesRepository.getPopularMovies(_observingMovies)
-//            1 -> moviesRepository.getNowPlayingMovies(_observingMovies)
-//            2 -> moviesRepository.getUpcomingMovies(_observingMovies)
-//            3 -> moviesRepository.getTopMovies(_observingMovies)
-//        }
-//        _currentPosition = position
-//    }
+class HomeFragmentViewModel(application: Application) : AndroidViewModel(application),
+        LifecycleObserver {
+
+    fun deleteMovie(item: SimpleMovie) {}
+
+    var readWantMovies: LiveData<List<WantMovie>>
+    var readWatchMovies: LiveData<List<WatchedMovie>>
+    var readFavoriteActors: LiveData<List<FavoriteActor>>
+    private val repository: MovieRepository
+
+    init {
+        val movieDao = MoviesDatabase.getDatabase(application).movieDao()
+        repository = MovieRepository(movieDao = movieDao)
+        readWantMovies = repository.readWantMovies
+        readWatchMovies = repository.readWatchedMovies
+        readFavoriteActors = repository.readFavoriteActors
+    }
 }

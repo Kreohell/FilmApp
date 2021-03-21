@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "324699689284",
+    "project_id": "my-study-project-133bd",
+    "storage_bucket": "my-study-project-133bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324699689284:android:56c00dd54f2c55304c8711",
+        "android_client_info": {
+          "package_name": "ru.geekbrains.filmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324699689284-qrvbr80k69nmajhsv38gp71n59a9ohlq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKX_sScCIOAAHO4seFBB_3HB_iBlhzFcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324699689284-qrvbr80k69nmajhsv38gp71n59a9ohlq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
